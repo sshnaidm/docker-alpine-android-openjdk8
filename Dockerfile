@@ -28,5 +28,6 @@ RUN mkdir -p /opt/android-sdk && cd /opt/android-sdk && \
     mkdir -p /root/.android/ && touch /root/.android/repositories.cfg && \
     yes | sdkmanager --update && \
     for i in $ANDROID_INSTALL; do yes | sdkmanager $i ; done && \
-rm /var/cache/apk/*
+    rm /var/cache/apk/* && \
+    sdkmanager --list && java -version
 
